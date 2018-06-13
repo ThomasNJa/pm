@@ -1,0 +1,26 @@
+
+DROP DATABASE plant_management
+
+CREATE DATABASE plant_management
+
+CREATE TABLE USER(
+idcard VARCHAR(50) PRIMARY KEY,
+username VARCHAR(50),
+age NUMERIC(3,0),
+telephone VARCHAR(50),
+address VARCHAR(50),
+roleid VARCHAR(50),
+FOREIGN KEY (roleid) REFERENCES role(roleid)
+)
+
+CREATE TABLE account(
+account VARCHAR(50) PRIMARY KEY,
+PASSWORD VARCHAR(50),
+userId VARCHAR(50),
+FOREIGN KEY(userId) REFERENCES USER(idcard)
+)
+
+CREATE TABLE role(
+roleid VARCHAR(50) PRIMARY KEY,
+rolename VARCHAR(50)
+)
